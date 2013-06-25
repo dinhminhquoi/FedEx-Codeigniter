@@ -32,4 +32,39 @@
 
 class Fedex_address_validation extends Fedex_driver
 {
+	private $addressLines = array();
+	
+	
+	public function setAddressLine($addressLine)
+	{
+		$this->addressLines[] = $addressLine;
+	}
+	
+	public function setCity($city)
+	{
+	}
+	
+	public function setState($state)
+	{
+	}
+	
+	public function setZip($zip)
+	{
+	}
+	
+	public function validateAddress()
+	{
+	}
+	
+	public function buildRequest()
+	{
+		$request['WebAuthenticationDetail'] = array('UserCredential' =>
+        	array('Key' => SELF::API_KEY, 'Password' => SELF::API_PASSWORD));
+		$request['ClientDetail'] = array('AccountNumber' => SELF::API_ACCOUNT, 'MeterNumber' => SELF::API_METER);
+		$request['TransactionDetail'] = array('CustomerTransactionId' => ' *** Address Validation Request v2 using PHP ***');
+		$request['Version'] = array('ServiceId' => 'aval', 'Major' => '2', 'Intermediate' => '0', 'Minor' => '0');
+		$request['RequestTimestamp'] = date('c');
+		
+		return $request;
+	}
 }
