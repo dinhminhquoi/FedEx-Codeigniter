@@ -147,11 +147,11 @@ abstract class Fedex_driver
 	protected $CI;
 	
 	
-	const END_POINT = "https://wsbeta.fedex.com:443/web-services";
-	const API_KEY = "dOtB32I5YShJ6YZX";
-	const API_PASSWORD = "Sb6LKkZbg2sL0zH9bsSFcrBmZ";
-	const API_ACCOUNT = "510087763";
-	const API_METER = "118583810";
+	protected $END_POINT = "https://wsbeta.fedex.com:443/web-services";
+	protected $API_KEY = "dOtB32I5YShJ6YZX";
+	protected $API_PASSWORD = "Sb6LKkZbg2sL0zH9bsSFcrBmZ";
+	protected $API_ACCOUNT = "510087763";
+	protected $API_METER = "118583810";
 	
 	public function __construct()
 	{
